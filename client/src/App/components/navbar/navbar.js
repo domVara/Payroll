@@ -10,23 +10,20 @@ class Navbar extends Component {
     const { context } = this.props;
 
     return (
-      <div>
+      <div id = "navbarContainer">
         <nav className="navbar" id = "navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
             <div className="navbar-item">
-              <i className="fa fa-thumbs-up"></i>
-            </div>
-            <div className="navbar-item">
-              Final Countdown
+              <h1 className = "is-size-3" id = "navbarProjectName"> Final Countdown </h1>
             </div>
           </div>
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-primary">
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="buttons">
+                <a className="button is-primary is-size-4">
                   <strong>Sign up</strong>
                 </a>
-                <a class="button is-light">
+                <a className="button is-light is-size-4">
                   Log in
                 </a>
               </div>
