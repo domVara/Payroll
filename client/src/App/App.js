@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import FrontPage from './pages/front-page.js';
+import AddEmployee from './pages/addEmployee';
+
 
 
 class App extends Component {
@@ -10,7 +12,7 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path='/' component={FrontPage}/>
-
+          <Route path='/addEmployee' component={AddEmployee}/>
         </Switch>
       </div>
     )

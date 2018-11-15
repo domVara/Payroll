@@ -18,7 +18,7 @@ class FrontPage extends Component {
             </a>
           </div>
           <div className = "boxPadding">
-            <a className = "box boxSize has-text-centered">
+            <a  href="http://localhost:3000/addEmployee" className = "box boxSize has-text-centered">
               <strong className = "is-size-4"> Add new Employee </strong>
               <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUwrv_TisQ3hwbzKAD_jrgH4Syj60EBuovPQTDHGT9Kd1sE8QG" />
             </a>
