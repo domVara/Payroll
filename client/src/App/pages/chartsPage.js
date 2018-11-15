@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AddEmployeeForm from "../components/addEmployeeForm/addEmployeeForm.js"
+import BarGraph from "../components/bar-graph/bar-graph.js"
 
 
 class ChartsPage extends Component {
@@ -9,7 +9,7 @@ class ChartsPage extends Component {
   render() {
     return (
       <div>
-        Charts Page
+        <BarGraph />
       </div>
     );
   }

@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import FrontPage from './pages/front-page.js';
 import AddEmployee from './pages/addEmployee';
+import ChartsPage from './pages/chartsPage';
 
 
 
@@ -13,6 +14,8 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={FrontPage}/>
           <Route path='/addEmployee' component={AddEmployee}/>
+          <Route path='/chart' component={ChartsPage}/>
+
         </Switch>
       </div>
     )

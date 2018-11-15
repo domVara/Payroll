@@ -45,7 +45,7 @@ class FrontPage extends Component {
             </a>
           </div>
           <div className = "boxPadding">
-            <a className = "box boxSize has-text-centered">
+            <a href="http://localhost:3000/chart" className = "box boxSize has-text-centered">
               <strong className = "is-size-4"> Charts/Logging </strong>
               <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkqE7fehSG_QbXpcYXvs91xa4tU1_04tKLmdyO-fhHW67DbbBu" />
             </a>
