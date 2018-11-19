@@ -1,5 +1,5 @@
 1)Install NodeJs(LTS version should be good)
-2)Clone the this repository. 
+2)Clone the the repository. 
 3)"cd payroll" . The Payroll folder is where the Express backend will run. This sever will run the 
   routes for this project. 
 4)"npm install". NPM is package manager, it has all the APIs that we will be using to build this application. 
