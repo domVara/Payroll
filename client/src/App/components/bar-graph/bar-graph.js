@@ -3,7 +3,7 @@ import {Bar} from 'react-chartjs-2';
 import "./styles/bar-graph.css"
 
 
-class AddEmployeeForm extends Component {
+class BarGraph extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,4 +50,4 @@ class AddEmployeeForm extends Component {
   }
 }
 
-export default AddEmployeeForm;
+export default BarGraph;

@@ -1,5 +1,8 @@
 .fieldSize{
-  width: 30%
+  width: 45%
+}
+#heading{
+  align-self: center;
 }
 #addEmployeeFormContainer{
   margin-left: 10%;
