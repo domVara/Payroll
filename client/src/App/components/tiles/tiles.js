@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import "./styles/tiles.css"
 
 class FrontPage extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
 

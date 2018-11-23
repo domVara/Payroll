@@ -3,9 +3,7 @@ import AddEmployeeForm from "../components/addEmployeeForm/addEmployeeForm.js"
 
 
 class AddEmployeePage extends Component {
-  constructor(props) {
-    super(props);
-  }
+  
 
   render() {
     return (

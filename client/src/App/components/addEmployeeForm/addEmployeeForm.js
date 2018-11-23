@@ -4,8 +4,8 @@ import "./styles/addEmployeeForm.css"
 class AddEmployeeForm extends Component {
   constructor(props) {
     super(props);
+    this.state = {firstName: ''};
   }
-
   render() {
 
     return (
@@ -37,10 +37,10 @@ class AddEmployeeForm extends Component {
           </div>
         </div>
 
-        <div class="field">
-          <label class="label">Subject</label>
-          <div class="control">
-            <div class="select">
+        <div className="field">
+          <label className="label">Subject</label>
+          <div className="control">
+            <div className="select">
               <select>
                 <option>Select dropdown</option>
                 <option>With options</option>
@@ -48,7 +48,7 @@ class AddEmployeeForm extends Component {
             </div>
           </div>
         </div>
-        
+
       </div>
     );
   }
