@@ -5,11 +5,13 @@ let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let item = require('./routes/api/items')
 let employee = require('./routes/api/employees')
+let cors = require('cors')
 
 mongoose.connect('mongodb://finalcountdown:abond172@54.242.164.123:27017/payroll');
 
 // Configure bodyparser to handle post requests
 
+app.use(cors())
 app.use(bodyParser.json());
 app.use(express.static('public'))
 app.use(item)

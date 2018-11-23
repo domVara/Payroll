@@ -14,9 +14,12 @@ router.post('/api/employee',(req,res) => {
   const newEmployee= new Employee({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    position: req.body.position,
-    age: req.body.age,
-    team: req.body.team
+    team: req.body.team,
+    salary: req.body.salary,
+    positionTitle: req.body.positionTitle,
+    email: req.body.email,
+    phoneNumber: req.body.phoneNumber,
+    branchLocation: req.body.branchLocation,
   })
   newEmployee.save().then(employee => res.json(employee))
 });

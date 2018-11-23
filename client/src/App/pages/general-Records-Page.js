@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Records from '../components/records/records'
 
 class GeneralRecordsPage extends Component {
 
@@ -7,7 +7,7 @@ class GeneralRecordsPage extends Component {
   render() {
     return (
       <div>
-        GeneralRecordsPage
+        <Records />
       </div>
     );
   }
