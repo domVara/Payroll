@@ -3,11 +3,15 @@ let express = require('express')
 let router = require('express').Router();
 
 
+
+
+
 //get all the Employee
 router.get('/api/employee',(req,res) => {
   Employee.find()
     .then(employee => res.json(employee));
 });
+
 
 //add an Employee
 router.post('/api/employee',(req,res) => {
