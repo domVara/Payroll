@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import RemoveEmployee from "../components/removeEmployee/removeEmployee.js"
 
 class TerminationPage extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class TerminationPage extends Component {
   render() {
     return (
       <div>
-        Termination Page
+        <RemoveEmployee />
       </div>
     );
   }

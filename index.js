@@ -13,8 +13,6 @@ mongoose.connect('mongodb://finalcountdown:abond172@54.242.164.123:27017/payroll
 // Configure bodyparser to handle post requests
 
 // Add headers
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
 app.use(function (req, res, next) {
 
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
@@ -25,6 +23,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use(bodyParser.json());
 app.use(express.static('public'))
 app.use(item)
 app.use(employee)
