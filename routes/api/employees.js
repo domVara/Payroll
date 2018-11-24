@@ -4,8 +4,6 @@ let router = require('express').Router();
 
 
 
-
-
 //get all the Employee
 router.get('/api/employee',(req,res) => {
   Employee.find()
