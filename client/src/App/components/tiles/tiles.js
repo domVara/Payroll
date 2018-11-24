@@ -12,8 +12,8 @@ class FrontPage extends Component {
       <div>
         <div className = "columns columnsRow">
           <div className = "boxPadding">
-            <a className = "box boxSize has-text-centered">
-              <strong className = "is-size-4"> Employee </strong>
+            <a href="/employees" className = "box boxSize has-text-centered">
+              <strong className = "is-size-4"> Employees </strong>
               <img src = "https://png.pngtree.com/svg/20160816/doctors_263923.png" />
             </a>
           </div>
@@ -30,6 +30,8 @@ class FrontPage extends Component {
             </a>
           </div>
         </div>
+
+        
         <div className = "columns columnsRow">
           <div className = "boxPadding">
             <a className = "box boxSize has-text-centered">
