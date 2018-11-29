@@ -1,21 +1,33 @@
-//mongo --host mongodb://finalcountdown:abond172@54.242.164.123:27017
+//mongo --host mongodb://finalcountdown:abond172@54.152.37.40
 let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let item = require('./routes/api/items')
 let employee = require('./routes/api/employees')
+let team = require('./routes/api/team')
+
 var cors = require('cors');
 
 
-mongoose.connect('mongodb://finalcountdown:abond172@54.242.164.123:27017/payroll');
+mongoose.connect('mongodb://finalcountdown:abond172@54.152.37.40/payroll');
 
-// Configure bodyparser to handle post requests
+const port = process.env.PORT || 5000;
+app.listen(port);
 
-// Add headers
+
+var frontEndRoute
+
 app.use(function (req, res, next) {
 
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    if(req.headers.host == "localhost:5000"){
+      frontEndRoute = "http://localhost:3000"
+    }
+    else {
+      frontEndRoute = "http://ec2-100-24-4-43.compute-1.amazonaws.com:3000"
+    }
+
+    res.setHeader('Access-Control-Allow-Origin', frontEndRoute  );
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -27,15 +39,9 @@ app.use(bodyParser.json());
 app.use(express.static('public'))
 app.use(item)
 app.use(employee)
+app.use(team)
 
 
-
-
-
-
-
-const port = process.env.PORT || 5000;
-app.listen(port);
 
 
 console.log('App is listening on port ' + port);

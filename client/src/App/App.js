@@ -8,6 +8,9 @@ import ChartsPage from './pages/chartsPage';
 import Employees from './pages/employees';
 import Login from './pages/login';
 import TerminationPage from './pages/termination-Page'
+import TeamPage from './pages/team-page';
+import SingleTeam from './pages/singleTeam';
+
 
 function onAuthRequired({history}) {
   history.push('/login');
@@ -28,6 +31,10 @@ class App extends Component {
                 <SecureRoute path='/chartPage' component={ChartsPage} />
                 <SecureRoute path='/addEmployee' component={AddEmployee} />
                 <SecureRoute path='/terminationPage' component={TerminationPage} />
+                <SecureRoute path='/teampage' component={TeamPage} />
+                <SecureRoute path='/singleTeam/:team' component={SingleTeam} />
+
+
                 <Route path='/login' render={() => <Login baseUrl='https://dev-857287.oktapreview.com' />} />
                 <Route path='/implicit/callback' component={ImplicitCallback} />
             </Security>

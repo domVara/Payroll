@@ -18,23 +18,23 @@ class FrontPage extends Component {
             </a>
           </div>
           <div className = "boxPadding">
-            <a  href="http://localhost:3000/addEmployee" className = "box boxSize has-text-centered">
+            <a  href="/addEmployee" className = "box boxSize has-text-centered">
               <strong className = "is-size-4"> Add new Employee </strong>
               <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUwrv_TisQ3hwbzKAD_jrgH4Syj60EBuovPQTDHGT9Kd1sE8QG" />
             </a>
           </div>
           <div className = "boxPadding">
-            <a className = "box boxSize has-text-centered">
+            <a href="/teampage" className = "box boxSize has-text-centered">
               <strong className = "is-size-4"> Teams </strong>
               <img src = "http://www.shasthasystemsandsolutions.com/wp-content/uploads/2018/03/Icon_OneTeam.png" />
             </a>
           </div>
         </div>
 
-        
+
         <div className = "columns columnsRow">
           <div className = "boxPadding">
-            <a className = "box boxSize has-text-centered">
+            <a href="/terminationPage" className = "box boxSize has-text-centered">
               <strong className = "is-size-4"> General Records </strong>
               <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPj1CX4EDRgujlDPq1cOkbs-T3QM3k0T0DisBpPvcHKiQLFwztlg" />
 
@@ -47,7 +47,7 @@ class FrontPage extends Component {
             </a>
           </div>
           <div className = "boxPadding">
-            <a href="http://localhost:3000/chart" className = "box boxSize has-text-centered">
+            <a href="http://localhost:3000/chartpage" className = "box boxSize has-text-centered">
               <strong className = "is-size-4"> Charts/Logging </strong>
               <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkqE7fehSG_QbXpcYXvs91xa4tU1_04tKLmdyO-fhHW67DbbBu" />
             </a>

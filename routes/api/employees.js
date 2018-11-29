@@ -10,6 +10,12 @@ router.get('/api/employee',(req,res) => {
     .then(employee => res.json(employee));
 });
 
+//find by name
+router.get('/api/teams/:team',(req,res) => {
+    Employee.find({}).distinct({team})
+      .then(team => {res.json(team); console.log("aasd")})
+});
+
 
 //add an Employee
 router.post('/api/employee',(req,res) => {

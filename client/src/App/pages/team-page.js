@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TeamsList from '../components/teamsList/teamsList.js'
 
 
 class TeamPage extends Component {
@@ -10,7 +11,7 @@ class TeamPage extends Component {
 
     return (
       <div>
-        TEAM PAGE
+        <TeamsList />
       </div>
     );
   }

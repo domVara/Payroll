@@ -10,6 +10,7 @@ class ChartsPage extends Component {
     return (
       <div>
         <BarGraph />
+        asdas
       </div>
     );
   }

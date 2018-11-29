@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import "./styles/removeEmployee.css"
+import "./styles/team.css"
 import axios from 'axios'
 
-class removeEmployee extends Component {
+class Team extends Component {
   state={employees:[]}
 
   constructor(props) {
@@ -72,4 +72,4 @@ class removeEmployee extends Component {
 }
 
 
-export default removeEmployee;
+export default Team;
