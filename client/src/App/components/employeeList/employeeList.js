@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios'
 
 import "./styles/employeeList.css"
 
@@ -11,33 +12,27 @@ class EmployeeList extends Component {
 
   componentWillMount(){
     console.log('EmployeeList mounting....');
-     // sample data
-    this.setState({employees: {
-        "data":[
-            {id: 1001,name: "Don James", team: "finance", title: "supervisor", email: "don.james@company.com", 
-            phone: "408-123-4567", location: "San Jose", hours: 33.50, wage: "salary",}, 
-
-            {id: 1001,name: "Don James", team: "finance", title: "supervisor", email: "don.james@company.com", 
-            phone: "408-123-4567", location: "San Jose", hours: 33.50, wage: "salary",},
-            ]
-    
-    }}); 
+    axios.get('/api/employee')
+      .then(res => {
+        console.log(res.data)
+        this.setState({employees : res.data})
+      })
   }
 
   renderEmployees(){
-        
-    return this.state.employees.data.map(employee => 
+
+    return this.state.employees.map(employee =>
 
         <tr>
           <th>{employee.id}</th>
-          <td>{employee.name}</td>
+          <td>{employee.firstName}</td>
           <td>{employee.team}</td>
-          <td>{employee.title}</td>
+          <td>{employee.positionTitle}</td>
           <td>{employee.email}</td>
-          <td>{employee.phone}</td>
-          <td>{employee.location}</td>
+          <td>{employee.phoneNumber}</td>
+          <td>{employee.branchLocation}</td>
           <td>{employee.hours}</td>
-          <td>{employee.wage}</td>
+          <td>{employee.salary}</td>
         </tr>
     );
   }
@@ -46,7 +41,7 @@ class EmployeeList extends Component {
 
     return (
       <div>
-          <table class="table">
+          <table className="table">
             <thead>
                 <tr>
                 <th><abbr title="id">Employee ID</abbr></th>
@@ -60,7 +55,7 @@ class EmployeeList extends Component {
                 <th><abbr title="wage-type">Salary/Hourly</abbr></th>
                 </tr>
             </thead>
-         
+
             <tbody>
                 {this.renderEmployees()}
             </tbody>
