@@ -9,6 +9,7 @@ let employeeSchema = new mongoose.Schema({
   email: String,
   phoneNumber: String,
   branchLocation: String,
+  hours: String
 })
 
 module.exports = mongoose.model('Employee', employeeSchema)

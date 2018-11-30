@@ -2,18 +2,12 @@ let Employee = require("../../models/employee")
 let express = require('express')
 let router = require('express').Router();
 
-
+//
 
 //get all the Employee
 router.get('/api/employee',(req,res) => {
   Employee.find()
-    .then(employee => res.json(employee));
-});
-
-//find by name
-router.get('/api/teams/:team',(req,res) => {
-    Employee.find({}).distinct({team})
-      .then(team => {res.json(team); console.log("aasd")})
+    .then(employee => {res.json(employee)})
 });
 
 
@@ -28,6 +22,8 @@ router.post('/api/employee',(req,res) => {
     email: req.body.email,
     phoneNumber: req.body.phoneNumber,
     branchLocation: req.body.branchLocation,
+    hours: [req.body.hours]
+
   })
   newEmployee.save().then(employee => res.json(employee))
 });

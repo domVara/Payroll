@@ -46,10 +46,6 @@ class AddEmployeeForm extends Component {
     .catch(function (error) {
       console.error(error);
     });
-
-
-
-
   }
 
   render() {

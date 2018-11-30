@@ -22,12 +22,12 @@ app.use(function (req, res, next) {
 
     if(req.headers.host == "localhost:5000"){
       frontEndRoute = "http://localhost:3000"
+
     }
     else {
       frontEndRoute = "http://ec2-100-24-4-43.compute-1.amazonaws.com:3000"
     }
-
-    res.setHeader('Access-Control-Allow-Origin', frontEndRoute  );
+    res.setHeader('Access-Control-Allow-Origin', frontEndRoute);
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -40,7 +40,6 @@ app.use(express.static('public'))
 app.use(item)
 app.use(employee)
 app.use(team)
-
 
 
 
