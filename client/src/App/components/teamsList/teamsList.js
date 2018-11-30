@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import "./styles/teamsList.css"
 import axios from 'axios'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
 
 class TeamsList extends Component {
 
@@ -12,8 +18,7 @@ constructor(props) {
 }
 
 componentWillMount(){
-    console.log('EmployeeList mounting....');
-    axios.get('http://localhost:5000/api/teams')
+    axios.get('/api/teams/')
       .then(res => {
         console.log(res.data)
         this.setState({teams : res.data})
@@ -24,7 +29,7 @@ componentWillMount(){
    return(
      this.state.teams.map(team =>
      <div className = "column">
-       <a href = {"http://localhost:3000/api/teams/:" + team} id = "folderContainer">
+       <a href = {"singleTeam/" + team} id = "folderContainer">
          <h1  id = "teamFontSize"> {team} </h1>
          <i className="fa fa-folder folderSize" aria-hidden="true"></i>
        </a>

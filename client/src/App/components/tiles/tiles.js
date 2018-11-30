@@ -34,20 +34,20 @@ class FrontPage extends Component {
 
         <div className = "columns columnsRow">
           <div className = "boxPadding">
-            <a href="/terminationPage" className = "box boxSize has-text-centered">
+            <a  className = "box boxSize has-text-centered">
               <strong className = "is-size-4"> General Records </strong>
               <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPj1CX4EDRgujlDPq1cOkbs-T3QM3k0T0DisBpPvcHKiQLFwztlg" />
 
             </a>
           </div>
           <div className = "boxPadding">
-            <a className = "box boxSize has-text-centered">
+            <a href="/terminationPage" className = "box boxSize has-text-centered">
               <strong className = "is-size-4">  Termination </strong>
               <img src = "https://static.thenounproject.com/png/175956-200.png" />
             </a>
           </div>
           <div className = "boxPadding">
-            <a href="http://localhost:3000/chartpage" className = "box boxSize has-text-centered">
+            <a href="/chartpage" className = "box boxSize has-text-centered">
               <strong className = "is-size-4"> Charts/Logging </strong>
               <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkqE7fehSG_QbXpcYXvs91xa4tU1_04tKLmdyO-fhHW67DbbBu" />
             </a>
