@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Navbar, Button } from 'react-bootstrap';
+import { Navbar, } from 'react-bootstrap';
+import Button from 'react-button-component';
 import './App.css';
 
 class App extends Component {
@@ -21,13 +22,13 @@ class App extends Component {
     return (
       <div>
         <Navbar fluid>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a className="App-header"  href="/front-page">Final-Countdown</a>
+          <Navbar.Header >
+            <Navbar.Brand className="App-header">
+              <a   href="/front-page">Final-Countdown</a>
             </Navbar.Brand>
             <Button
-              bsStyle="primary"
-              className="btn-margin"
+              cbsStyle="primary"
+              className="btn-margin button"
               onClick={this.goTo.bind(this, 'front-page')}
             >
               Home
@@ -37,7 +38,7 @@ class App extends Component {
                   <Button
                     id="qsLoginBtn"
                     bsStyle="primary"
-                    className="btn-margin"
+                    className="btn-margin button"
                     onClick={this.login.bind(this)}
                   >
                     Log In
@@ -49,7 +50,7 @@ class App extends Component {
                   <Button
                     id="qsLogoutBtn"
                     bsStyle="primary"
-                    className="btn-margin"
+                    className="btn-margin button"
                     onClick={this.logout.bind(this)}
                   >
                     Log Out
@@ -57,6 +58,7 @@ class App extends Component {
                 )
             }
           </Navbar.Header>
+          
         </Navbar>
       </div>
     );
