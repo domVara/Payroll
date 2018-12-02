@@ -1,13 +1,11 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import './../node_modules/bulma/css/bulma.css';
-import 'font-awesome/css/font-awesome.min.css'
+import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App/App';
+//import 'bootstrap/dist/css/bootstrap.css';
+import { makeMainRoutes } from './routes';
 
-render((
-    <BrowserRouter>
-        <App/>
-    </BrowserRouter>
-), document.getElementById('root'));
+const routes = makeMainRoutes();
+
+ReactDOM.render(
+  routes,
+  document.getElementById('root')
+);

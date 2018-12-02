@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./styles/tiles.css"
 
-class FrontPage extends Component {
+class Tiles extends Component {
   constructor(props) {
     super(props);
   }
@@ -58,4 +58,4 @@ class FrontPage extends Component {
   }
 }
 
-export default FrontPage;
+export default Tiles;

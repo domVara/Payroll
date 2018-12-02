@@ -1,50 +1,64 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
+import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
-import FrontPage from './pages/front-page.js';
-import AddEmployee from './pages/addEmployee';
-import ChartsPage from './pages/chartsPage';
-import Employees from './pages/employees';
-import Login from './pages/login';
-import TerminationPage from './pages/termination-Page'
-import TeamPage from './pages/team-page';
-import SingleTeam from './pages/singleTeam';
-
-
-function onAuthRequired({history}) {
-  history.push('/login');
-}
 
 class App extends Component {
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
+
   render() {
-    const App = () => (
-      <div>
-        <Router>
-            <Security issuer='https://dev-857287.oktapreview.com/oauth2/default'
-                      client_id='0oahphozqyYtp44XS0h7'
-                      redirect_uri={window.location.origin + '/implicit/callback'}
-                      onAuthRequired={onAuthRequired} >
+    const { isAuthenticated } = this.props.auth;
 
-                <SecureRoute path='/' exact={true} component={FrontPage} />
-                <SecureRoute path='/employees' component={Employees} />
-                <SecureRoute path='/chartPage' component={ChartsPage} />
-                <SecureRoute path='/addEmployee' component={AddEmployee} />
-                <SecureRoute path='/terminationPage' component={TerminationPage} />
-                <SecureRoute path='/teampage' component={TeamPage} />
-                <SecureRoute path='/singleTeam/:team' component={SingleTeam} />
-
-
-                <Route path='/login' render={() => <Login baseUrl='https://dev-857287.oktapreview.com' />} />
-                <Route path='/implicit/callback' component={ImplicitCallback} />
-            </Security>
-        </Router>
-      </div>
-    )
     return (
-      <Switch>
-        <App/>
-      </Switch>
+      <div>
+        <Navbar fluid>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a className="App-header"  href="/front-page">Final-Countdown</a>
+            </Navbar.Brand>
+            <Button
+              bsStyle="primary"
+              className="btn-margin"
+              onClick={this.goTo.bind(this, 'front-page')}
+            >
+              Home
+            </Button>
+            {
+              !isAuthenticated() && (
+                  <Button
+                    id="qsLoginBtn"
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.login.bind(this)}
+                  >
+                    Log In
+                  </Button>
+                )
+            }
+            {
+              isAuthenticated() && (
+                  <Button
+                    id="qsLogoutBtn"
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.logout.bind(this)}
+                  >
+                    Log Out
+                  </Button>
+                )
+            }
+          </Navbar.Header>
+        </Navbar>
+      </div>
     );
   }
 }
