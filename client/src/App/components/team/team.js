@@ -5,7 +5,8 @@ import "./styles/team.css"
 import axios from 'axios'
 
 class Team extends Component {
-  state={employees:[]}
+  state={employees: []}
+
 
   constructor(props) {
     super(props);
@@ -13,7 +14,6 @@ class Team extends Component {
 
   componentWillMount(){
     axios.get("/api/teams/" + this.props.val)
-
       .then(res => {
         console.log(res.data)
         this.setState({employees : res.data})

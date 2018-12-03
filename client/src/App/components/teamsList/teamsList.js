@@ -18,9 +18,8 @@ constructor(props) {
 }
 
 componentWillMount(){
-    axios.get('/api/teams/')
+    axios.get("/api/teams/")
       .then(res => {
-        console.log(res.data)
         this.setState({teams : res.data})
       })
   }
@@ -33,7 +32,7 @@ componentWillMount(){
          <h1  id = "teamFontSize"> {team} </h1>
          <i className="fa fa-folder folderSize" aria-hidden="true"></i>
        </a>
-      </div>
+     </div>
       )
    );
  }
