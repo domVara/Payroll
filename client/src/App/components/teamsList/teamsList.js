@@ -18,7 +18,7 @@ constructor(props) {
 }
 
 componentWillMount(){
-    axios.get('/api/teams/')
+    axios.get('http://ec2-100-24-4-43.compute-1.amazonaws.com:5000/api/teams/')
       .then(res => {
         console.log(res.data)
         this.setState({teams : res.data})
