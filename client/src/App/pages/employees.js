@@ -4,14 +4,14 @@ import EmployeesList from "../components/employeeList/employeeList.js"
 
 class Employees extends Component {
 
-  login() {
-    this.props.auth.login();
-  }
-
   constructor(props) {
     super(props);
   }
 
+  login() {
+    this.props.auth.login();
+  }
+  
   render() {
     const { isAuthenticated } = this.props.auth;
     return (
