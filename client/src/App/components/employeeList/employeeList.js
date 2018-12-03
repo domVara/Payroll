@@ -52,7 +52,7 @@ class EmployeeList extends Component {
                 <th><abbr title="phone">Phone Number</abbr></th>
                 <th><abbr title="location">Office Location</abbr></th>
                 <th><abbr title="hours">Hours Logged</abbr></th>
-                <th><abbr title="wage-type">Salary/Hourly</abbr></th>
+                <th><abbr title="wage-type">Salary</abbr></th>
                 </tr>
             </thead>
 

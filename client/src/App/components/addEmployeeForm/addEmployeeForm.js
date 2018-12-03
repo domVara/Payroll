@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./styles/addEmployeeForm.css"
 import axios from 'axios'
+import history from '../../../history';
+
 
 class AddEmployeeForm extends Component {
   constructor(props) {
@@ -19,33 +21,38 @@ class AddEmployeeForm extends Component {
 
 
   onSubmit(){
-    const employee = {
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      team: this.state.team,
-      salary: this.state.salary,
-      positionTitle: this.state.positionTitle,
-      email: this.state.email,
-      phoneNumber: this.state.phoneNumber,
-      branchLocation: this.state.branchLocation,
+      const employee = {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        team: this.state.team,
+        salary: this.state.salary,
+        positionTitle: this.state.positionTitle,
+        email: this.state.email,
+        phoneNumber: this.state.phoneNumber,
+        branchLocation: this.state.branchLocation,
+      }
+      if (employee.firstName != ''){
+      axios.post('api/employee', {
+        firstName: employee.firstName,
+        lastName: employee.lastName,
+        team: employee.team,
+        salary: employee.salary,
+        positionTitle: employee.positionTitle,
+        email: employee.email,
+        phoneNumber: employee.phoneNumber,
+        branchLocation: employee.branchLocation,
+      })
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+      
+      history.replace('/front-page');
+    }else{
+      history.replace('/add-employee-error')
     }
-
-    axios.post('api/employee', {
-      firstName: employee.firstName,
-      lastName: employee.lastName,
-      team: employee.team,
-      salary: employee.salary,
-      positionTitle: employee.positionTitle,
-      email: employee.email,
-      phoneNumber: employee.phoneNumber,
-      branchLocation: employee.branchLocation,
-    })
-    .then(function (response) {
-      console.log(response)
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
   }
 
   render() {
@@ -53,7 +60,7 @@ class AddEmployeeForm extends Component {
     return (
       <div>
           <div id="heading" >
-            <h1>ADD EMPLOYEE FORM</h1>
+            <h1 className="title">ADD EMPLOYEE FORM</h1>
           </div>
           <div id = "addEmployeeFormContainer">
           <div className="columns">

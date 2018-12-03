@@ -12,12 +12,13 @@
 
 .App-header {
   background-color: #282c34;
+  background-color: aqua;
   min-height: 10vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(15px + 2vmin);
   color: white;
 }
 
@@ -28,7 +29,7 @@
 .button{
   color: blue;
   font-size: 20px;
-  background-color: darkgray;
+  background-color: lightgray;
   border: 2px;
 }
 
