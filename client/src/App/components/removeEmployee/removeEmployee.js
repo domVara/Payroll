@@ -12,7 +12,7 @@ class removeEmployee extends Component {
 
   componentWillMount(){
     console.log('EmployeeList mounting....');
-    axios.get('http://localhost:5000/api/employee')
+    axios.get('/api/employee')
       .then(res => {
         console.log(res.data)
         this.setState({employees : res.data})
