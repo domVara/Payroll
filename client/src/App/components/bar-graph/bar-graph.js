@@ -1,50 +1,24 @@
 import React, { Component } from "react";
 import {Bar} from 'react-chartjs-2';
+import axios from 'axios'
 import "./styles/bar-graph.css"
 
 
 class BarGraph extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      chartData: {
-        labels:['Boston','Worcester','Springfield','Lowell','Cambridge','New Bedford'],
-        datasets:[
-        {
-          label: 'Teams',
-          data:[
-            617594,
-            181045,
-            153021,
-            106231,
-            105232,
-            95072
-          ],
-          backgroundColor:[
-            'rgba(255, 99, 132,  0.6)',
-            'rgba(255, 99, 132,  0.6)',
-            'rgba(255, 99, 132,  0.6)',
-            'rgba(255, 99, 132,  0.6)',
-            'rgba(255, 99, 132,  0.6)',
-            'rgba(255, 99, 132,  0.6)',
-          ]
-        }
-      ]
-      }
-    }
-  }
+      employees:[],
+      Data:{}
+    }}
 
   render() {
 
     return (
       <div>
-      <Bar
-        data = {this.state.chartData}
-      	options={{
-      		  maintainAspectRatio: true
-          }}
-      />
-
+        <Bar
+        />
       </div>
     );
   }
