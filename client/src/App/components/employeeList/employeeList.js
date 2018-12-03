@@ -12,7 +12,7 @@ class EmployeeList extends Component {
 
   componentWillMount(){
     console.log('EmployeeList mounting....');
-    axios.get('http://localhost:5000/api/employee')
+    axios.get('/api/employee')
       .then(res => {
         this.setState({employees : res.data})
       })
