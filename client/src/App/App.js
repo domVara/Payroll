@@ -21,10 +21,10 @@ class App extends Component {
 
     return (
       <div>
-        <Navbar fluid>
+        <Navbar fluid className="App-header">
           <Navbar.Header >
-            <Navbar.Brand className="App-header">
-              <a   href="/front-page">Final-Countdown</a>
+            <Navbar.Brand >
+                <a   href="/front-page">Final-Countdown</a>
             </Navbar.Brand>
             <Button
               cbsStyle="primary"

@@ -41,6 +41,8 @@ class Team extends Component {
 
     return (
       <div>
+        Team 
+        {this.state.employees}
           <table className="table">
             <thead>
                 <tr>
