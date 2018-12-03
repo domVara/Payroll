@@ -31,7 +31,7 @@ class AddEmployeeForm extends Component {
         phoneNumber: this.state.phoneNumber,
         branchLocation: this.state.branchLocation,
       }
-
+      if (employee.firstName != ''){
       axios.post('api/employee', {
         firstName: employee.firstName,
         lastName: employee.lastName,
@@ -50,6 +50,9 @@ class AddEmployeeForm extends Component {
       });
       
       history.replace('/front-page');
+    }else{
+      history.replace('/add-employee-error')
+    }
   }
 
   render() {

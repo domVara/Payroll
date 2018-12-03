@@ -24,7 +24,7 @@ class App extends Component {
         <Navbar fluid className="App-header">
           <Navbar.Header >
             <Navbar.Brand >
-              <a   href="/front-page">Final-Countdown</a>
+                <a   href="/front-page">Final-Countdown</a>
             </Navbar.Brand>
             <Button
               cbsStyle="primary"

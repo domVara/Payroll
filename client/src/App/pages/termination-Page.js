@@ -14,7 +14,7 @@ class TerminationPage extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       
-      <div>
+      <div className="container">
         {
           isAuthenticated() && (
             <RemoveEmployee />

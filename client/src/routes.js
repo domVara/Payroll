@@ -13,6 +13,7 @@ import ChartsPage from './App/pages/chartsPage';
 import TeamPage from './App/pages/team-page';
 import TerminationPage from './App/pages/termination-Page';
 import SingleTeam from './App/pages/singleTeam';
+import AddEmployeeError from './App/pages/add-employee-error';
 
 const auth = new Auth();
 
@@ -34,6 +35,7 @@ export const makeMainRoutes = () => {
           <Route path="/team-page" render={(props) => <TeamPage auth={auth} {...props} />} />
           <Route path="/termination-Page" render={(props) => <TerminationPage auth={auth} {...props} />} />
           <Route path="/singleTeam" render={(props) => <SingleTeam auth={auth} {...props} />} />
+          <Route path="/add-employee-error" render={(props) => <AddEmployeeError auth={auth} {...props} />} />
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} /> 

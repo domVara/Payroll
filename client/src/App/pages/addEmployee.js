@@ -15,7 +15,7 @@ class AddEmployee extends Component {
   render() {
     const { isAuthenticated } = this.props.auth;
     return (
-      <div>
+      <div className="container">
         {
           isAuthenticated() && (
             <AddEmployeeForm />
