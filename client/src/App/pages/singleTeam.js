@@ -10,18 +10,12 @@ class SingleTeam extends Component {
     super(props);
   }
 
-  componentWillMount(){
-      console.log('IT IS MOUNTING....');
-      console.log(this.props.match.params.team)
-    }
 
   render() {
 
     return (
       <div>
         <Team val = {this.props.match.params.team}/>
-        <BarGraph val = {this.props.match.params.team}/>
-
       </div>
     );
   }
