@@ -26,7 +26,8 @@ class Team extends Component {
 
     return (
       <div>
-        asdas
+        Team 
+        {this.state.employees}
 
       </div>
     );

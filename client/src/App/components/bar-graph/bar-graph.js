@@ -11,7 +11,7 @@ class BarGraph extends Component {
         labels:['Boston','Worcester','Springfield','Lowell','Cambridge','New Bedford'],
         datasets:[
         {
-          label: 'Population',
+          label: 'Teams',
           data:[
             617594,
             181045,

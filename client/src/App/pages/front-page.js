@@ -15,7 +15,9 @@ class FrontPage extends Component {
         }
         {
           !isAuthenticated() && (
-              <h4>
+
+            <div>
+              <h3>
                 You are viewing the public page! Please{' '}
                 <a
                   style={{ cursor: 'pointer', color: 'blue'}}
@@ -24,7 +26,9 @@ class FrontPage extends Component {
                   (Log In)
                 </a>
                 {' '}to continue into accociates area.
-              </h4>
+              </h3>
+              <Tiles/>
+            </div>
             )
         }
       </div>
