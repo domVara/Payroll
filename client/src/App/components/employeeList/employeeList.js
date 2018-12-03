@@ -12,7 +12,7 @@ class EmployeeList extends Component {
 
   componentWillMount(){
     console.log('EmployeeList mounting....');
-    axios.get('/api/employee' + + this.props.val)
+    axios.get('/api/employee')
       .then(res => {
         console.log(res.data)
         this.setState({employees : res.data})

@@ -15,6 +15,7 @@ class Team extends Component {
     axios.get("/api/teams/" + this.props.val)
 
       .then(res => {
+        console.log(res.data)
         this.setState({employees : res.data})
       })
   }
@@ -41,7 +42,7 @@ class Team extends Component {
 
     return (
       <div>
-        Team 
+        Team
         {this.state.employees}
           <table className="table">
             <thead>
