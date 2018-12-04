@@ -9,13 +9,13 @@ pipeline {
         }
         stage('Build') {     
             steps {   
-                sh "docker build -t finalcountdown/server",
-                sh "cd client"
+                sh: "docker build -t finalcountdown/server",
+                sh: "cd client"
             }
         } 
         stage('Test') {     
             steps {                
-                sh "docker start -d finalcountdown/client"
+                sh: "docker start -d finalcountdown/client"
             }
         }
     }
