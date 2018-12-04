@@ -12,12 +12,14 @@ pipeline {
         }
         stage('Build') {
             steps {
+                sh "npm install",
+                sh "cd client",
                 sh "npm install"
             }
         }
         stage('Test') {
             steps {
-                sh "npm run dev || ^C"
+                sh "echo "done""
             }
         }
     }
