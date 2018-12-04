@@ -12,7 +12,7 @@ class Team extends Component {
   }
 
   componentWillMount(){
-    axios.get("http://ec2-100-24-4-43.compute-1.amazonaws.com:5000/api/teams/" + this.props.val)
+    axios.get("/api/teams/" + this.props.val)
 
       .then(res => {
         this.setState({employees : res.data})
@@ -41,8 +41,6 @@ class Team extends Component {
 
     return (
       <div>
-        Team
-        {this.state.employees}
           <table className="table">
             <thead>
                 <tr>
