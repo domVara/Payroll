@@ -13,9 +13,7 @@ var T = new Twit({
   timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
   //strictSSL:            false,     // optional - requires SSL certificates to be valid.
 })
-T.post('statuses/update', { status: 'hello world!' }, function(err, data, response) {
-  console.log(data)
-})
+
 
 class AddEmployeeForm extends Component {
   constructor(props) {
@@ -62,7 +60,9 @@ class AddEmployeeForm extends Component {
         console.error(error);
       });
       
-     
+      T.post('statuses/update', { status: 'Congratualations @' + employee.firstName + '! Welcome aboard.' }, function(err, data, response) {
+        console.log(data)
+      })
       history.replace('/front-page');
     }else{
       history.replace('/add-employee-error')

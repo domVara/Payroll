@@ -1,5 +1,5 @@
 var Twit = require('twit')
- 
+
 var T = new Twit({
   consumer_key:         'HR2RypCQIo9srhXsjaoaTyhlN',
   consumer_secret:      'ND7BGkHeTpbHLzZBgv74HUhrtLR7JjIRZprLh5l9MI5Phw6c0g',
@@ -9,6 +9,7 @@ var T = new Twit({
   //strictSSL:            false,     // optional - requires SSL certificates to be valid.
 })
 
-T.post('statuses/update', { status: 'hello world!' }, function(err, data, response) {
-    console.log(data)
-  })
+const tweet = ''
+T.get('search/tweets', { q: 'banana since:2011-07-11', count: 1 }, function(err, data, response) {
+  console.log(data)
+})
