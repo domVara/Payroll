@@ -12,8 +12,8 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        appclient = docker.build("finalcountdown/appClient")
-        appserver = docker.build("finalcountdown/appServer")
+        appclient = docker.build("finalcountdown/appclient")
+        appserver = docker.build("finalcountdown/appserver")
     }
 
     stage('Test image') {
