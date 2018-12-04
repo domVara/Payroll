@@ -1,8 +1,4 @@
 pipeline {
-    agent { docker { image 'node:8.11.3' } }
-    environment {
-        HOME = '.'
-    }
     stages {
         stage('Clone') {
             steps {
@@ -10,18 +6,24 @@ pipeline {
                     url: 'https://github.com/domVara/payroll.git'
             }
         }
-        stage('Build') {
-            steps {
-                sh "docker build -t finalcountdown/server"
-                sh "cd client"
+        stage('Build') {     
+            steps {   
+                sh "docker build -t finalcountdown/server",
+                sh "cd client",
                 sh "docker build -t finalcountdown/client"
+            }
+        } 
+        stage('Test') {     
+            steps {                
+                sh "docker start -d finalcountdown/client",
+                sh "docker start -d finalcountdown/server"   
             }
         }
         stage('Test') {
             steps {
-                sh "docker start -d finalcountdown/client"
-                sh "docker start -d finalcountdown/server"
+                sh "echo "done""
             }
         }
     }
 }
+
