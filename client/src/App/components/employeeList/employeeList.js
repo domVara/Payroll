@@ -14,7 +14,6 @@ class EmployeeList extends Component {
     console.log('EmployeeList mounting....');
     axios.get('/api/employee')
       .then(res => {
-        console.log(res.data)
         this.setState({employees : res.data})
       })
   }

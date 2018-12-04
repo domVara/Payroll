@@ -21,7 +21,12 @@ class removeEmployee extends Component {
 
 
   handleClick(e,data){
-    console.log(e.target.parentElement.parentElement)
+    var parent = e.target.parentElement.parentElement.parentElement
+    var firstName = parent.children[1].innerHTML
+    var lastName = parent.children[2].innerHTML
+
+    axios.delete('http://localhost:5000/api/employee/' + firstName + '/' + lastName )
+    window.location.reload();
 
   }
 
@@ -32,6 +37,7 @@ class removeEmployee extends Component {
         <tr>
           <th><a onClick={this.handleClick}> <i className="fa fa-trash icon is-large " aria-hidden="true"></i></a></th>
             <td>{employee.firstName}</td>
+            <td>{employee.lastName}</td>
             <td>{employee.team}</td>
             <td>{employee.positionTitle}</td>
             <td>{employee.email}</td>
@@ -51,7 +57,8 @@ class removeEmployee extends Component {
             <thead>
                 <tr>
                 <th><abbr title="id">Employee ID</abbr></th>
-                <th><abbr title="name">Name</abbr></th>
+                <th><abbr title="firstName">First Name</abbr></th>
+                <th><abbr title="lastName">Last Name</abbr></th>
                 <th><abbr title="team">Team</abbr></th>
                 <th><abbr title="title">Title</abbr></th>
                 <th><abbr title="email">Email</abbr></th>

@@ -38,9 +38,9 @@ export const makeMainRoutes = () => {
           <Route path="/add-employee-error" render={(props) => <AddEmployeeError auth={auth} {...props} />} />
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
-            return <Callback {...props} /> 
+            return <Callback {...props} />
           }}/>
-          
+
         </div>
       </Router>
   );
