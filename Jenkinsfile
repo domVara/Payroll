@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'node:8.13.3' } }
+    agent { docker { image 'node:8.11.3' } }
     environment {
         HOME = '.'
     }
