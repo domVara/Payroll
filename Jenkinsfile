@@ -6,7 +6,9 @@ pipeline {
         sh 'echo "building app'
       }
       stage('Testing') {
-        sh 'npm run dev'
+        steps {
+          sh 'npm run dev'
+        }
     }
   }
 }
