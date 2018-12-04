@@ -35,4 +35,11 @@ router.delete('/api/employee/:id',(req,res) => {
     .catch(err => res.status(404).json({sucess: false}))
   });
 
+
+router.delete('/api/employee/:firstName/:lastName',(req,res) => {
+  Employee.findOne({firstName : req.params.firstName, lastName : req.params.lastName })
+    .then(employee => employee.remove().then(() => res.json({sucess : true})))
+    .catch(err => res.status(404).json({sucess: false}))
+  });
+
 module.exports = router
