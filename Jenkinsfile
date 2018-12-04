@@ -12,7 +12,6 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh "apt install docker"
                 sh "docker build -t finalcountdown/server"
                 sh "cd client"
                 sh "docker build -t finalcountdown/client"
