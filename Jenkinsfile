@@ -19,8 +19,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "docker run -d finalcountdown/server ."
-                sh "docker run -d finalcountdown/client ."
+                sh "docker run -d -p 5000:5000 finalcountdown/server"
+                sh "docker run -d -p 3000:3000 finalcountdown/client"
             }
         }
     }
