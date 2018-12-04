@@ -1,6 +1,6 @@
 node {
-    def appClient
-    def appServer
+    def appclient
+    def appserver
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -12,19 +12,19 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        appClient = docker.build("finalcountdown/appClient")
-        appServer = docker.build("finalcountdown/appServer")
+        appclient = docker.build("finalcountdown/appClient")
+        appserver = docker.build("finalcountdown/appServer")
     }
 
     stage('Test image') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
 
-        appClient.inside {
+        appclient.inside {
             sh 'echo "Tests passed"'
         }
         
-        appServer.inside {
+        appserver.inside {
             sh 'echo "Tests passed"'
         }
     }
@@ -35,8 +35,12 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+            appserver.push("${env.BUILD_NUMBER}")
+            appserver.push("latest")
+        }
+        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+            appclient.push("${env.BUILD_NUMBER}")
+            appclient.push("latest")
         }
     }
 }
