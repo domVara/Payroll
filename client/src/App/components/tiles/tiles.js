@@ -31,7 +31,7 @@ class FrontPage extends Component {
           </div>
         </div>
 
-        
+
         <div className = "columns columnsRow">
           <div className = "boxPadding">
             <a href="/general-Records-Page" className = "box boxSize has-text-centered">

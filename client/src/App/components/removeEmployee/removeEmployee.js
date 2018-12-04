@@ -12,7 +12,7 @@ class removeEmployee extends Component {
 
   componentWillMount(){
     console.log('EmployeeList mounting....');
-    axios.get('http://localhost:5000/api/employee')
+    axios.get('api/employee')
       .then(res => {
         console.log(res.data)
         this.setState({employees : res.data})
@@ -25,7 +25,7 @@ class removeEmployee extends Component {
     var firstName = parent.children[1].innerHTML
     var lastName = parent.children[2].innerHTML
 
-    axios.delete('http://localhost:5000/api/employee/' + firstName + '/' + lastName )
+    axios.delete('api/employee/' + firstName + '/' + lastName )
     window.location.reload();
 
   }

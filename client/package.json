@@ -76,7 +76,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "http://ec2-100-24-4-43.compute-1.amazonaws.com:5000",
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -97,7 +97,7 @@
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
-    "testURL": "http://localhost",
+    "testURL": "http://http://ec2-100-24-4-43.compute-1.amazonaws.com",
     "transform": {
       "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
