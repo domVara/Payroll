@@ -3,8 +3,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'echo "hello world"'
+        sh 'echo "building app'
       }
+      stage('Testing') {
+        sh 'npm run dev'
     }
   }
 }
