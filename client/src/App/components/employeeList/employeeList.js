@@ -23,7 +23,6 @@ class EmployeeList extends Component {
     return this.state.employees.map(employee =>
 
         <tr>
-          <th>{employee.id}</th>
           <td>{employee.firstName}</td>
           <td>{employee.team}</td>
           <td>{employee.positionTitle}</td>
@@ -43,7 +42,6 @@ class EmployeeList extends Component {
           <table className="table">
             <thead>
                 <tr>
-                <th><abbr title="id">Employee ID</abbr></th>
                 <th><abbr title="name">Name</abbr></th>
                 <th><abbr title="team">Team</abbr></th>
                 <th><abbr title="title">Title</abbr></th>

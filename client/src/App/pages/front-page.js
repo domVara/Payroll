@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Tiles from '../components/tiles/tiles';
+import { Timeline } from 'react-twitter-widgets'
+
 class FrontPage extends Component {
   login() {
     this.props.auth.login();
@@ -8,7 +10,24 @@ class FrontPage extends Component {
     const { isAuthenticated } = this.props.auth;
     
     return (
-      <div className="container">
+      <div style={{display: 'flex', flexDirection: 'row'}}> 
+
+        {
+          <div  style={{width: '400px'}}>
+          <Timeline
+              dataSource={{
+                sourceType: 'profile',
+                screenName: 'Countdown172'
+              }}
+              options={{
+                username: 'Countdown172',
+                height: '600'
+              }}
+              onLoad={() => console.log('Timeline is loaded!')}
+            />
+
+          </div>
+        }
         {
           isAuthenticated() && (
               <Tiles />

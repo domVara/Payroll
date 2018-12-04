@@ -3,7 +3,16 @@ import { Navbar, } from 'react-bootstrap';
 import Button from 'react-button-component';
 import './App.css';
 
+
 class App extends Component {
+
+  state={latestTweet:''}
+  
+  constructor(props) {
+    super(props);
+    this.setState({latestTweet: 'tweet'});
+  }
+  
   goTo(route) {
     this.props.history.replace(`/${route}`)
   }
@@ -57,6 +66,7 @@ class App extends Component {
                   </Button>
                 )
             }
+            
           </Navbar.Header>
           
         </Navbar>

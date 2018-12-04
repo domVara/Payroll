@@ -8,7 +8,7 @@ class ChartsPage extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="container">
         <BarGraph />
       </div>
     );

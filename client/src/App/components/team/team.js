@@ -15,7 +15,6 @@ class Team extends Component {
     axios.get("/api/teams/" + this.props.val)
 
       .then(res => {
-        console.log(res.data)
         this.setState({employees : res.data})
       })
   }
