@@ -1,16 +1,19 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        sh '''echo "checking dependencies"
-npm install '''
-      }
+    agent { docker { image 'node:8.13.3' } }
+    environment {
+        HOME = '.'
     }
-    stage('Test') {
-      steps {
-        sh 'npm run dev'
-      }
+    stages {
+        stage('Clone') {
+            steps {
+                git branch: 'AWSBranch',
+                    url: 'https://github.com/domVara/payroll.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh "npm install"
+            }
+        }
     }
-  }
 }
