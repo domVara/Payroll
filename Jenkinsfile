@@ -1,36 +1,27 @@
-node {
-    def appclient
-    def appserver
-
-    stage('Clone repository') {
-
-        checkout scm
+pipeline {
+    agent { docker { image 'node:8.11.3' } }
+    environment {
+        HOME = '.'
     }
-
-    stage('Build image') {
-
-        sh 'docker-compose –f -d build-compose.yml run –rm compile'
-    }
-
-    stage('Test image') {
-
-        appclient.inside {
-            sh 'echo "Tests passed"'
+    stages {
+        stage('Clone') {
+            steps {
+                git branch: 'AWSBranch',
+                    url: 'https://github.com/domVara/payroll.git'
+            }
         }
-        
-        appserver.inside {
-            sh 'echo "Tests passed"'
+        stage('Build') {
+            steps {
+                sh "docker build -t finalcountdown/server"
+                sh "cd client"
+                sh "docker build -t finalcountdown/client"
+            }
         }
-    }
-
-    stage('Push image') {
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            appserver.push("${env.BUILD_NUMBER}")
-            appserver.push("latest")
-        }
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            appclient.push("${env.BUILD_NUMBER}")
-            appclient.push("latest")
+        stage('Test') {
+            steps {
+                sh "docker start -d finalcountdown/client"
+                sh "docker start -d finalcountdown/server"
+            }
         }
     }
 }
